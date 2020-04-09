@@ -1,5 +1,35 @@
 /* The console container element */
-body { background-color: black; font-size: 16px; font-family: Courier; overflow: hidden; padding: 0 0 0 0;}
+
+body { overflow: hidden; padding: 0 0 0 0;}
+/* Split the screen in half */
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+background-color: #2E3440; 
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 
 #console {
     position: absolute;
@@ -7,11 +37,14 @@ body { background-color: black; font-size: 16px; font-family: Courier; overflow:
     bottom: 0px;
     left: 0px;
     right: 0px;
-    background-color:black;
+    background-color: #2E3440;
 }
 
+#console * {
+  font-size: 12px; font-family: 'IBM Plex Mono'; font-weight: 600;
+}
 .parents {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 /* The inner console element. */
@@ -20,36 +53,36 @@ body { background-color: black; font-size: 16px; font-family: Courier; overflow:
 }
 /* The cursor. */
 .jqconsole-cursor {
-    background-color: gray;
+    background-color: #D8DEE9;
 }
 /* The cursor color when the console looses focus. */
 .jqconsole-blurred .jqconsole-cursor {
-    background-color: #666;
+    background-color: #E5E9F0;
 }
 /* The current prompt text color */
 .jqconsole-prompt {
-    color: White;
+    color: #ECEFF4;
 }
 /* The command history */
 .jqconsole-old-prompt {
-    color: White;
-    font-weight: normal;
+    color: #ECEFF4;
+/*    font-weight: normal; */
 }
 /* The text color when in input mode. */
 .jqconsole-input {
-    color: White;
+    color: #ECEFF4;
 }
 /* Previously entered input. */
 .jqconsole-old-input {
-    color: White;
-    font-weight: normal;
+    color: #ECEFF4;
+/*     font-weight: normal; */
 }
 /* The text color of the output. */
 .jqconsole-output {
-    color: green;
+    color: #A3BE8C;
 }
 .jqconsole-return, .jqconsole-header {
-    color: gray;
+    color: #D8DEE9;
 }
 .jqconsole-error {
     color: red;

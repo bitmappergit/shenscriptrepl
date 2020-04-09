@@ -24,7 +24,7 @@ $(async function () {
   await shen.exec("(define runsh Parsed -> (trap-error (shen.toplevel (read-from-string Parsed)) (/. E (shen.toplevel-display-exception E))))")
   let evalShen = await shen.caller("runsh")
 
-  //jqconsole.Write("Welcome to the (basic) ShenScript REPL!\n\n", 'jqconsole-output')
+  jqconsole.Write("Welcome to the ShenScript REPL!\nThe <div> on the right is available under the id workspace.\n\n", 'jqconsole-output')
   await shen.exec('(do (shen.initialise_environment) (shen.credits))')
   //jqconsole.Write("\n\n", 'jqconsole-output')
 
