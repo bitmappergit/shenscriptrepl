@@ -1,6 +1,6 @@
 /* The console container element */
 
-body { overflow: hidden; padding: 0 0 0 0;}
+body { overflow: hidden; padding: 0 0 0 0; }
 /* Split the screen in half */
 .split {
   height: 100%;
@@ -8,7 +8,7 @@ body { overflow: hidden; padding: 0 0 0 0;}
   position: fixed;
   z-index: 1;
   top: 0;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 /* Control the left side */
@@ -29,8 +29,11 @@ body { overflow: hidden; padding: 0 0 0 0;}
   transform: translate(-50%, -50%);
   text-align: center;
 }
-
+::-webkit-scrollbar {
+  display: none;
+}
 #console {
+
     position: absolute;
     top: 0px;
     bottom: 0px;
@@ -40,6 +43,7 @@ body { overflow: hidden; padding: 0 0 0 0;}
 }
 
 #console * {
+
   font-size: 12px; font-family: 'IBM Plex Mono'; font-weight: 600;
 }
 .parents {
