@@ -29,9 +29,7 @@ body { overflow: hidden; padding: 0 0 0 0; }
   transform: translate(-50%, -50%);
   text-align: center;
 }
-::-webkit-scrollbar {
-  display: none;
-}
+
 #console {
 
     position: absolute;
