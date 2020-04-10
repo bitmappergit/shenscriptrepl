@@ -25,8 +25,9 @@ $(async function () {
   await shen.exec("(define runsh Parsed -> (trap-error (shen.toplevel (read-from-string Parsed)) (/. E (shen.toplevel-display-exception E))))")
   await shen.exec("(define input-parses? Str -> (let Chars (map (function string->n) (explode Str)) Parsed (compile (/. X (shen.<st_input> X)) Chars (/. E $$$input-incomplete)) (shen-script.boolean.shen->js (not (= Parsed $$$input-incomplete)))))")
   let inputParses = await shen.caller("input-parses?")
+  await shen.define("shen.pause-for-user", async () => {})
   //await shen.exec("(define runsh Parsed -> (trap-error (shen.toplevel (read-from-string Parsed)) (/. E (shen.toplevel-display-exception E))))")
-  let evalShen = await shen.caller("runsh")
+  let evalShen = shen.caller("runsh")
 
   jqconsole.Write("Welcome to the ShenScript REPL!\nThe <div> on the right is available under the id workspace.\n", 'jqconsole-output')
   await shen.exec('(do (shen.initialise_environment) (shen.credits))')
@@ -36,7 +37,7 @@ $(async function () {
     jqconsole.SetPromptLabel(prompt)
     jqconsole.Prompt(true, async (input) => {
       evalShen(input)
-      await shen.exec("(set *history* (+ (value *history*) 1))")
+      shen.exec("(set *history* (+ (value *history*) 1))")
       startPrompt()
     }, async (input, next) => {
       if (input.trim() === "") { return next(0) }
