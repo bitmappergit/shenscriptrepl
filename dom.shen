@@ -7,4 +7,4 @@
                     [br]
                     [input [@type "button"]
                            [@value "button"]
-                           [!click (/. _ (output "button has been clicked~%"))]]])))
+                           [!click (/. _ (output "~%button has been clicked~%"))]]])))
